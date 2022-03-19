@@ -7,7 +7,7 @@ async function run() {
 	const cli = meow(
 		`
 	Usage
-	  $ credits-updater --pat=<GITHUB_PAT>
+	  $ credits-generator --pat=<GITHUB_PAT>
 `,
 		{
 			importMeta: import.meta,

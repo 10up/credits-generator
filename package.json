@@ -1,9 +1,9 @@
 {
-	"name": "@10up/credits-updater",
+	"name": "@10up/credits-generator",
 	"version": "1.0.0",
-	"description": "Update or generate CREDITS.md for the repository.",
+	"description": "Generate credits data for GitHub repository.",
 	"license": "MIT",
-	"repository": "10up/credits-updater",
+	"repository": "10up/credits-generator",
 	"author": {
 		"name": "10up",
 		"email": "opensource@10up.com",
@@ -18,7 +18,7 @@
 	},
 	"main": "cli.js",
 	"bin": {
-		"credits-updater": "cli.js"
+		"credits-generator": "cli.js"
 	},
 	"files": [
 		"cli.js"
