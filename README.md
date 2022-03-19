@@ -19,7 +19,7 @@ Run this command in the root directory of a GitHub repository.
 
 ### Command flags:
 
-- **`--pat`** <small>(required)</small>
+- **`--pat`** <small>(optional)</small>
 
 	GitHub Personal Access Token (PAT). Due to the rate limit of unauthorized API access, we need PAT to ensure GitHub doesn't block our requests. Personal Access Token can be created [here](https://github.com/settings/tokens), no scope is required.
 
