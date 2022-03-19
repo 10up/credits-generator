@@ -7,18 +7,26 @@ async function run() {
 	const cli = meow(
 		`
 	Usage
-	  $ credits-generator --pat=<GITHUB_PAT>
+	  $ credits-generator
+
+	Options:
+	  --pat Personal access token.
+	  --since Date string to query contribution from.
+	  --no-fullName Do not include full name in the output.
 `,
 		{
 			importMeta: import.meta,
 			flags: {
 				pat: {
 					type: "string",
-					isRequired: true,
 				},
 				since: {
 					type: "string",
 					default: "",
+				},
+				fullName: {
+					type: "boolean",
+					default: true,
 				},
 			},
 		}
@@ -122,8 +130,11 @@ async function run() {
 
 	const creditLines = await Promise.all(
 		contributors.map(async (contributor) => {
-			const fullName = await getUserFullName(contributor);
-			return `[${fullName} (${contributor})](https://github.com/${contributor})`;
+			if (cli.flags.fullName) {
+				const fullName = await getUserFullName(contributor);
+				return `[${fullName} (@${contributor})](https://github.com/${contributor})`;
+			}
+			return `[@${contributor}](https://github.com/${contributor})`;
 		})
 	);
 
