@@ -33,7 +33,7 @@ async function run() {
 	);
 
 	const octokit = new Octokit({
-		...cli.flags.pat ? { auth: cli.flags.pat } : {},
+		...(cli.flags.pat ? { auth: cli.flags.pat } : {}),
 	});
 
 	const since = cli.flags.since ? new Date(cli.flags.since).toISOString() : "";
