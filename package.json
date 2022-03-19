@@ -1,0 +1,37 @@
+{
+	"name": "@10up/credits-updater",
+	"version": "1.0.0",
+	"description": "Update or generate CREDITS.md for the repository.",
+	"license": "MIT",
+	"repository": "10up/credits-updater",
+	"author": {
+		"name": "10up",
+		"email": "opensource@10up.com",
+		"url": "https://10up.com"
+	},
+	"type": "module",
+	"engines": {
+		"node": ">=12"
+	},
+	"scripts": {
+		"test": "xo && ava"
+	},
+	"main": "cli.js" ,
+	"files": [
+		"cli.js"
+	],
+	"keywords": [
+		"cli",
+		"cli-app",
+		"fun"
+	],
+	"dependencies": {
+		"meow": "^10.1.2",
+		"octokit": "^1.7.1"
+	},
+	"devDependencies": {
+		"ava": "^3.15.0",
+		"execa": "^5.0.0",
+		"xo": "^0.37.0"
+	}
+}
