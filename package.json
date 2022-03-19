@@ -16,7 +16,10 @@
 	"scripts": {
 		"test": "xo && ava"
 	},
-	"main": "cli.js" ,
+	"main": "cli.js",
+	"bin": {
+		"credits-updater": "cli.js"
+	},
 	"files": [
 		"cli.js"
 	],
@@ -26,12 +29,8 @@
 		"fun"
 	],
 	"dependencies": {
+		"execa": "^6.1.0",
 		"meow": "^10.1.2",
 		"octokit": "^1.7.1"
-	},
-	"devDependencies": {
-		"ava": "^3.15.0",
-		"execa": "^5.0.0",
-		"xo": "^0.37.0"
 	}
 }
