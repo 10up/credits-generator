@@ -12,7 +12,7 @@ Run this command in the root directory of a GitHub repository.
 
 ```sh
 ~/workspace/wpcs-action
-2 % npx github:10up/credits-generator --pat=ghp_personal_access_token
+% npx github:10up/credits-generator
 
 [Tung Du (@dinhtungdu)](https://github.com/dinhtungdu), [Jeffrey Paul (@jeffpaul)](https://github.com/jeffpaul)
 ```
