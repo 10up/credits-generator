@@ -113,7 +113,7 @@ async function run() {
 			user: user,
 		});
 
-		return data.name;
+		return data.name || user;
 	}
 
 	const issues = await getIssues();
