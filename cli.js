@@ -10,9 +10,10 @@ async function run() {
 	  $ credits-generator
 
 	Options:
-	  --pat Personal access token.
-	  --since Date string to query contribution from.
+	  --pat         Personal access token.
+	  --since       Date string to query contribution from.
 	  --no-fullName Do not include full name in the output.
+	  --exclude     Comma-separated string of GitHub usernames.
 `,
 		{
 			importMeta: import.meta,
@@ -27,6 +28,10 @@ async function run() {
 				fullName: {
 					type: "boolean",
 					default: true,
+				},
+				exclude: {
+					type: "string",
+					default: "",
 				},
 			},
 		}
@@ -126,7 +131,13 @@ async function run() {
 		.filter((comment) => issueUrls.includes(comment.issue_url))
 		.map((comment) => comment.user.login);
 
-	const contributors = [...new Set(reporters.concat(commenters))];
+	let contributors = [...new Set(reporters.concat(commenters))];
+
+	const excludedContributors = cli.flags.exclude.split(",");
+
+	contributors = contributors.filter((contributor) => {
+		return !excludedContributors.includes(contributor);
+	});
 
 	const creditLines = await Promise.all(
 		contributors.map(async (contributor) => {

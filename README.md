@@ -25,8 +25,12 @@ Run this command in the root directory of a GitHub repository.
 
 - **`--since`** <small>(optional)</small>
 
-	A string value representing a date, specified in a format recognized by the Date.parse() method. By default, contributions are counted from the beginning. When this is set, only contributions after the given date will be queried.
+	A string value representing a date, specified in a format recognized by the `Date.parse()` method. By default, contributions are counted from the beginning. When this is set, only contributions after the given date will be queried.
 
 - **`--no-fullName`** <small>(optional)</small>
 
 	By default, the generated markdown includes the name of contributors. Passing this flag to only return the contributors' username. This reduces dramatically the number of API requests for the generation because we have to retrieve the name for each contributor in a separate request.
+
+- **`--exclude`** <small>(optional)</small>
+
+	A comma-spearated string of GitHub username to exclude from the final result.
