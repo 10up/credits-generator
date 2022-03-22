@@ -145,7 +145,7 @@ async function run() {
 				const fullName = await getUserFullName(contributor);
 				return `[${fullName} (@${contributor})](https://github.com/${contributor})`;
 			}
-			return `[@${contributor}](https://github.com/${contributor})`;
+			return `@${contributor}`;
 		})
 	);
 
