@@ -125,7 +125,7 @@ async function run() {
 			}
 		);
 
-		if( pulls.length == 0 ) {
+		if (pulls.length == 0) {
 			return [...reviews, ...newReviews.data];
 		}
 
@@ -167,14 +167,14 @@ async function run() {
 	}
 
 	const issues = await getIssues();
-	const pulls = issues.filter(issue => issue.pull_request);
+	const pulls = issues.filter((issue) => issue.pull_request);
 	const reviews = await getReviews(pulls);
 
 	const comments = await getIssueComments();
 	const reviewComments = await getReviewComments();
 
 	const issueUrls = issues.map((issue) => issue.url);
-	const pullUrls = pulls.map(pull => pull.pull_request.url)
+	const pullUrls = pulls.map((pull) => pull.pull_request.url);
 
 	const authors = issues.map((issue) => issue.user.login);
 	const reviewers = reviews.map((review) => review.user.login);
@@ -189,7 +189,14 @@ async function run() {
 		.filter((comment) => pullUrls.includes(comment.pull_request_url))
 		.map((comment) => comment.user.login);
 
-	let contributors = [...new Set([...authors, ...reviewers, ...commenters, ...reviewerCommenters])];
+	let contributors = [
+		...new Set([
+			...authors,
+			...reviewers,
+			...commenters,
+			...reviewerCommenters,
+		]),
+	];
 
 	const excludedContributors = cli.flags.exclude.split(",");
 
