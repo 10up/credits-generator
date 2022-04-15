@@ -1,6 +1,6 @@
 # credits-generator
 
-> This tiny package scans and generates a markdown command-separated list of GitHub users contributed to a repo including issue reporters, PR creators, and all commenters.
+> This tiny package scans and generates a markdown command-separated list of GitHub users contributed to a repo including issue reporters, PR creators, reviewers, and all commenters.
 
 
 Notes:
