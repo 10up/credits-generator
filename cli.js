@@ -49,10 +49,15 @@ async function run() {
 			"--get",
 			"remote.origin.url",
 		]);
-		const result = /:(\w+)\/([A-Za-z0-9-_]+)/.exec(stdout);
+
+		let result = /:(\w+)\/([A-Za-z0-9-_]+)/.exec(stdout);
 
 		if (!result) {
 			return null;
+		}
+
+		if (result[1] === null || result[2] === null) {
+			result = /github.com\/(\w+)\/([A-Za-z0-9-_]+)/.exec(stdout);
 		}
 
 		return {
