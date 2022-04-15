@@ -53,11 +53,11 @@ async function run() {
 		let result = /:(\w+)\/([A-Za-z0-9-_]+)/.exec(stdout);
 
 		if (!result) {
-			return null;
+			result = /github.com\/(\w+)\/([A-Za-z0-9-_]+)/.exec(stdout);
 		}
 
-		if (result[1] === null || result[2] === null) {
-			result = /github.com\/(\w+)\/([A-Za-z0-9-_]+)/.exec(stdout);
+		if (!result) {
+			return null;
 		}
 
 		return {
@@ -119,6 +119,10 @@ async function run() {
 	}
 
 	async function getReviews(pulls, reviews = []) {
+		if (pulls.length === 0) {
+			return reviews;
+		}
+
 		const repo = await getRepoInfo();
 		const current = pulls.shift();
 		const newReviews = await octokit.request(
