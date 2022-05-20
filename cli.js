@@ -85,7 +85,7 @@ async function run() {
 
 		const newIssues = batch.data;
 
-		if (newIssues.length > 100) {
+		if (newIssues.length >= 100) {
 			return await getIssues(issues.concat(newIssues), page + 1);
 		}
 
@@ -111,7 +111,7 @@ async function run() {
 
 		const newComments = batch.data;
 
-		if (newComments.length > 100) {
+		if (newComments.length >= 100) {
 			return await getIssueComments(comments.concat(newComments), page + 1);
 		}
 
@@ -160,7 +160,7 @@ async function run() {
 
 		const newComments = batch.data;
 
-		if (newComments.length > 100) {
+		if (newComments.length >= 100) {
 			return await getReviewComments(comments.concat(newComments), page + 1);
 		}
 
