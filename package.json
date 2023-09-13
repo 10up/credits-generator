@@ -1,6 +1,6 @@
 {
 	"name": "@10up/credits-generator",
-	"version": "1.0.0",
+	"version": "0.1.0",
 	"description": "Generate credits data for GitHub repository.",
 	"license": "MIT",
 	"repository": "10up/credits-generator",
