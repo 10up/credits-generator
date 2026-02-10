@@ -2,7 +2,10 @@
 
 > This tiny package scans and generates a markdown command-separated list of GitHub users contributed to a repo including issue reporters, PR creators, reviewers, and all commenters.
 
-[![Support Level](https://img.shields.io/badge/support-beta-blueviolet.svg)](#support-level) [![MIT License](https://img.shields.io/github/license/10up/credits-generator.svg)](https://github.com/10up/credits-generator/blob/trunk/LICENSE.md)
+[![Support Level](https://img.shields.io/badge/support-archived-red.svg)](#support-level) [![MIT License](https://img.shields.io/github/license/10up/credits-generator.svg)](https://github.com/10up/credits-generator/blob/trunk/LICENSE.md)
+
+> [!CAUTION]
+> As of 10 February 2026, this project is archived and no longer being actively maintained.
 
 ## Overview
 
@@ -40,7 +43,7 @@ Run this command in the root directory of a GitHub repository.
 
 ## Support Level
 
-**Beta:** This project is quite new and we're not sure what our ongoing support level for this will be. Bug reports, feature requests, questions, and pull requests are welcome. If you like this project please let us know, but be cautious using this in a Production environment!
+**Archived:** This project is no longer maintained by 10up. We are no longer responding to Issues or Pull Requests unless they relate to security concerns. We encourage interested developers to fork this project and make it their own!
 
 ## Changelog
 
